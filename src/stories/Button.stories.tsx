@@ -7,6 +7,14 @@ type StoryProps = ComponentProps<typeof Button>
 
 const meta: Meta<StoryProps> = {
   component: Button,
+
+  // TIP: You can also customize how the component props appears in the Storybook UI
+  // argTypes: {
+  //   variant: {
+  //     control: { type: 'select' },
+  //     options: ['primary', 'secondary'],
+  //   },
+  // },
 }
 
 export default meta
