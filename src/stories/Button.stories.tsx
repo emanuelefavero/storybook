@@ -14,7 +14,6 @@ const meta = {
   //   },
   // },
 } satisfies Meta<typeof Button>
-// TIP: You can also pass additional props `Meta<here>` that are not part of the component props..., e.g. & { buttonText: string }
 
 export default meta
 
@@ -29,8 +28,6 @@ export const Primary: Story = {
     className: /*tw*/ 'font-semibold',
     // onClick: () => alert('Primary Button Clicked!'),
   },
-  // TIP: ...and then destructure the props in the component render
-  // render: ({ buttonText }, ...args) => <Button {...args}>{buttonText}</Button>,
 }
 
 export const Secondary: Story = {
