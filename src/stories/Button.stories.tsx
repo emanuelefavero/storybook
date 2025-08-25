@@ -21,7 +21,7 @@ export const Primary: Story = {
     variant: 'primary',
     size: 'md',
     children: 'Primary Button',
-    className: /*tw*/ 'text-red-500',
+    className: /*tw*/ 'font-semibold',
     // onClick: () => alert('Primary Button Clicked!'),
   },
   // TIP: ...and then destructure the props in the component render
