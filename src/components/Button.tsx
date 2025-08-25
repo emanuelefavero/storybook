@@ -1,43 +1,42 @@
 import { cn } from '@/lib/utils'
-import type { ComponentPropsWithRef, ReactNode } from 'react'
+import { cva } from 'class-variance-authority'
+import type { ComponentPropsWithRef } from 'react'
 
-type Variant = 'primary' | 'secondary'
-type Size = 'sm' | 'md' | 'lg'
+const variants = cva(
+  'cursor-pointer rounded-lg border-none transition duration-250 outline-none active:scale-[.97]',
+  {
+    variants: {
+      variant: {
+        primary: /*tw*/ 'bg-blue-500 text-white hover:bg-blue-600',
+        secondary: /*tw*/ 'bg-gray-500 text-white hover:bg-gray-600',
+      },
+      size: {
+        sm: /*tw*/ 'px-2 py-1 text-sm',
+        md: /*tw*/ 'text-md px-4 py-2',
+        lg: /*tw*/ 'px-6 py-3 text-lg',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
+    },
+  },
+)
 
-type ButtonProps = ComponentPropsWithRef<'button'> & {
-  children?: ReactNode
-  variant?: Variant
-  size?: Size
+type Props = ComponentPropsWithRef<'button'> & {
+  variant?: 'primary' | 'secondary'
+  size?: 'sm' | 'md' | 'lg'
 }
 
-export default function Button({
+export default function Component({
   children,
-  className = '',
-  variant = 'primary',
-  size = 'md',
+  className,
+  variant,
+  size,
   ...props
-}: ButtonProps) {
-  const variants: Record<Variant, string> = {
-    primary: /*tw*/ 'bg-blue-500 text-white hover:bg-blue-600',
-    secondary: /*tw*/ 'bg-gray-500 text-white hover:bg-gray-600',
-  }
-
-  const sizes: Record<Size, string> = {
-    sm: /*tw*/ 'px-2 py-1 text-sm',
-    md: /*tw*/ 'px-4 py-2 text-md',
-    lg: /*tw*/ 'px-6 py-3 text-lg',
-  }
-
+}: Props) {
   return (
-    <button
-      className={cn(
-        'cursor-pointer rounded-lg border-none transition duration-250 outline-none active:scale-[.97]',
-        variants[variant],
-        sizes[size],
-        className,
-      )}
-      {...props}
-    >
+    <button className={cn(variants({ variant, size }), className)} {...props}>
       {children}
     </button>
   )

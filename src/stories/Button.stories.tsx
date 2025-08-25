@@ -2,10 +2,7 @@ import Button from '@/components/Button'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import type { ComponentProps } from 'react'
 
-type StoryProps = Pick<
-  ComponentProps<typeof Button>,
-  'variant' | 'size' | 'children' | 'className' | 'onClick'
->
+type StoryProps = ComponentProps<typeof Button>
 // TIP: You can also pass additional props here that are not part of the component props..., e.g. & { buttonText: string }
 
 const meta: Meta<StoryProps> = {
