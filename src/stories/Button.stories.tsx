@@ -5,6 +5,7 @@ import type { ComponentProps } from 'react'
 type StoryProps = ComponentProps<typeof Button>
 // TIP: You can also pass additional props here that are not part of the component props..., e.g. & { buttonText: string }
 
+// * Metadata
 const meta: Meta<StoryProps> = {
   component: Button,
 
@@ -19,6 +20,7 @@ const meta: Meta<StoryProps> = {
 
 export default meta
 
+// * Stories
 type Story = StoryObj<StoryProps>
 
 export const Primary: Story = {
@@ -31,4 +33,32 @@ export const Primary: Story = {
   },
   // TIP: ...and then destructure the props in the component render
   // render: ({ buttonText }, ...args) => <Button {...args}>{buttonText}</Button>,
+}
+
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary',
+    children: 'Secondary Button',
+  },
+}
+
+export const Small: Story = {
+  args: {
+    size: 'sm',
+    children: 'Small Button',
+  },
+}
+
+export const Medium: Story = {
+  args: {
+    size: 'md',
+    children: 'Medium Button',
+  },
+}
+
+export const Large: Story = {
+  args: {
+    size: 'lg',
+    children: 'Large Button',
+  },
 }
