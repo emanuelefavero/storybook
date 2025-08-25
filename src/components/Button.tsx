@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import type { ComponentPropsWithRef, ReactNode } from 'react'
 
 type Variant = 'primary' | 'secondary'
@@ -29,7 +30,12 @@ export default function Button({
 
   return (
     <button
-      className={`${variants[variant]} ${sizes[size]} cursor-pointer rounded-lg border-none transition duration-250 outline-none active:scale-[.97] ${className}`}
+      className={cn(
+        'cursor-pointer rounded-lg border-none transition duration-250 outline-none active:scale-[.97]',
+        variants[variant],
+        sizes[size],
+        className,
+      )}
       {...props}
     >
       {children}
