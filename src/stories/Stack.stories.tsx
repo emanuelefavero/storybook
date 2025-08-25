@@ -1,8 +1,8 @@
 import Stack from '@/components/Stack'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-type Props = React.ComponentProps<typeof Stack> & { numberOfChildren: number }
 // TIP: `numberOfChildren` is an additional prop only for the Storybook stories
+type Props = React.ComponentProps<typeof Stack> & { numberOfChildren: number }
 
 // * Metadata
 const meta: Meta<Props> = {
@@ -18,7 +18,7 @@ const meta: Meta<Props> = {
   args: {
     numberOfChildren: 3,
   },
-}
+} satisfies Meta<Props>
 
 export default meta
 
