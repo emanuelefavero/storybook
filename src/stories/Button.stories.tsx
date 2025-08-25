@@ -6,6 +6,7 @@ type StoryProps = Pick<
   ComponentProps<typeof Button>,
   'variant' | 'size' | 'children' | 'className' | 'onClick'
 >
+// TIP: You can also pass additional props here that are not part of the component props..., e.g. & { buttonText: string }
 
 const meta: Meta<StoryProps> = {
   component: Button,
@@ -20,7 +21,9 @@ export const Primary: Story = {
     variant: 'primary',
     size: 'md',
     children: 'Primary Button',
-    className: '',
+    className: /*tw*/ 'text-red-500',
     // onClick: () => alert('Primary Button Clicked!'),
   },
+  // TIP: ...and then destructure the props in the component render
+  // render: ({ buttonText }, ...args) => <Button {...args}>{buttonText}</Button>,
 }
