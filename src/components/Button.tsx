@@ -28,7 +28,7 @@ type Props = ComponentPropsWithRef<'button'> & {
   size?: 'sm' | 'md' | 'lg'
 }
 
-export default function Component({
+export default function Button({
   children,
   className,
   variant,
