@@ -8,6 +8,7 @@ type Props = React.ComponentProps<typeof Stack> & { numberOfChildren: number }
 const meta: Meta<Props> = {
   title: 'components/Stack',
   component: Stack,
+  tags: ['autodocs'],
   argTypes: {
     numberOfChildren: {
       options: [1, 2, 3, 5, 10],

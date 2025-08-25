@@ -5,6 +5,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 const meta = {
   title: 'components/Button', // ? Here you can set the category and name of the component to differentiate between components with same name
   component: Button,
+  tags: ['autodocs'], // ? Add auto documentation generation @see Storybook UI
 
   // TIP: You can also customize how the component props appears in the Storybook UI
   // argTypes: {
