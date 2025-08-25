@@ -7,7 +7,6 @@ type ButtonProps = ComponentPropsWithRef<'button'> & {
   children?: ReactNode
   variant?: Variant
   size?: Size
-  // onClick?: () => void
 }
 
 export default function Button({
@@ -18,8 +17,8 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const variants: Record<Variant, string> = {
-    primary: /*tw*/ 'bg-blue-500 text-white',
-    secondary: /*tw*/ 'bg-gray-500 text-white',
+    primary: /*tw*/ 'bg-blue-500 text-white hover:bg-blue-600',
+    secondary: /*tw*/ 'bg-gray-500 text-white hover:bg-gray-600',
   }
 
   const sizes: Record<Size, string> = {
@@ -30,7 +29,7 @@ export default function Button({
 
   return (
     <button
-      className={`${variants[variant]} ${sizes[size]} cursor-pointer rounded-lg border-none outline-none ${className}`}
+      className={`${variants[variant]} ${sizes[size]} cursor-pointer rounded-lg border-none transition duration-250 outline-none active:scale-[.97] ${className}`}
       {...props}
     >
       {children}

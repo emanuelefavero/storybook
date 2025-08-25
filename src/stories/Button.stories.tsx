@@ -21,6 +21,6 @@ export const Primary: Story = {
     size: 'md',
     children: 'Primary Button',
     className: '',
-    onClick: () => alert('Primary Button Clicked!'),
+    // onClick: () => alert('Primary Button Clicked!'),
   },
 }
