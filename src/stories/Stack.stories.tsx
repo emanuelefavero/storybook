@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 // * Metadata
 const meta = {
+  title: 'components/Stack',
   component: Stack,
 } satisfies Meta<typeof Stack>
 

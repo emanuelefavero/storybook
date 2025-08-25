@@ -1,12 +1,9 @@
 import Button from '@/components/Button'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import type { ComponentProps } from 'react'
-
-type StoryProps = ComponentProps<typeof Button>
-// TIP: You can also pass additional props here that are not part of the component props..., e.g. & { buttonText: string }
 
 // * Metadata
-const meta: Meta<StoryProps> = {
+const meta = {
+  title: 'components/Button', // ? Here you can set the category and name of the component to differentiate between components with same name
   component: Button,
 
   // TIP: You can also customize how the component props appears in the Storybook UI
@@ -16,12 +13,13 @@ const meta: Meta<StoryProps> = {
   //     options: ['primary', 'secondary'],
   //   },
   // },
-}
+} satisfies Meta<typeof Button>
+// TIP: You can also pass additional props `Meta<here>` that are not part of the component props..., e.g. & { buttonText: string }
 
 export default meta
 
 // * Stories
-type Story = StoryObj<StoryProps>
+type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
