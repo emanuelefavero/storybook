@@ -51,3 +51,7 @@ rm -f ./src/stories/*
 
 - [Storybook Documentation](https://storybook.js.org/)
 - [Next.js Documentation](https://nextjs.org/)
+
+## License
+
+- [MIT](LICENSE.md)
