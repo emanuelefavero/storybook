@@ -12,6 +12,7 @@ type ButtonProps = ComponentPropsWithRef<'button'> & {
 
 export default function Button({
   children,
+  className = '',
   variant = 'primary',
   size = 'md',
   ...props
@@ -29,7 +30,7 @@ export default function Button({
 
   return (
     <button
-      className={`${variants[variant]} ${sizes[size]} outline-none border-none cursor-pointer rounded-lg`}
+      className={`${variants[variant]} ${sizes[size]} cursor-pointer rounded-lg border-none outline-none ${className}`}
       {...props}
     >
       {children}
