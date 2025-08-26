@@ -4,10 +4,11 @@ import { cva } from 'class-variance-authority'
 type Props = React.ComponentPropsWithRef<'input'> & {
   variant?: 'default' | 'primary' | 'error' | 'warning' | 'success'
   width?: 'fit' | 'full'
+  size?: 'sm' | 'md' | 'lg'
 }
 
 const variants = cva(
-  'flex rounded-lg border px-3 py-2 text-base ring-offset-(--background) placeholder:text-gray-500 focus-visible:ring-1 focus-visible:ring-(--foreground) focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
+  'flex rounded-lg border ring-offset-(--background) placeholder:text-gray-500 focus-visible:ring-1 focus-visible:ring-(--foreground) focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
@@ -21,16 +22,24 @@ const variants = cva(
         fit: 'w-fit',
         full: 'w-full',
       },
+      size: {
+        sm: 'px-2 py-1 text-sm',
+        md: 'px-3 py-2 text-base',
+        lg: 'px-4 py-3 text-lg',
+      },
     },
     defaultVariants: {
       variant: 'default',
       width: 'full',
+      size: 'md',
     },
   },
 )
 
 export default function Input({
   variant,
+  width,
+  size,
   className,
   type = 'text',
   ...props
@@ -38,7 +47,7 @@ export default function Input({
   return (
     <input
       type={type}
-      className={cn(variants({ variant }), className)}
+      className={cn(variants({ variant, width, size }), className)}
       {...props}
     />
   )

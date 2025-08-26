@@ -12,7 +12,7 @@ const variants = cva(
       },
       size: {
         sm: /*tw*/ 'px-2 py-1 text-sm',
-        md: /*tw*/ 'text-md px-4 py-2',
+        md: /*tw*/ 'px-4 py-2 text-base',
         lg: /*tw*/ 'px-6 py-3 text-lg',
       },
     },
