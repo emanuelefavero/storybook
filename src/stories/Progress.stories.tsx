@@ -11,7 +11,7 @@ const meta: Meta<typeof Progress> = {
 export default meta
 
 // * Utils
-// Custom hook to animate the progress value from 0 to 100 over a specified duration
+// Custom hook to animate the progress value continuously from 0 to 100 over a specified duration
 const useAnimatedValue = (duration: number) => {
   const [value, setValue] = useState(0)
 
@@ -49,10 +49,17 @@ export const Fast: Story = {
   },
 }
 
+// TIP: Let the duration prop control the animation speed by simply setting the value to 100 after a short delay
 export const Slow: Story = {
   name: 'Slow (2000ms)',
   render: function SlowStory() {
-    const value = useAnimatedValue(2000)
+    const [value, setValue] = useState(0) // Start at 0
+
+    useEffect(() => {
+      const timeout = setTimeout(() => setValue(100), 200)
+      return () => clearTimeout(timeout)
+    }, [])
+
     return <Progress value={value} duration={2000} />
   },
 }
