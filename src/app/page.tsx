@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <h1>Hello</h1>
       <div className='p-4'>
-        <Progress value={100} duration={3000} />
+        <Progress value={50} duration={1000} />
       </div>
     </>
   )
