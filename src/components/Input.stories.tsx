@@ -69,3 +69,24 @@ export const Full: Story = {
     placeholder: 'Full Width',
   },
 }
+
+export const Small: Story = {
+  args: {
+    size: 'sm',
+    placeholder: 'Small Size',
+  },
+}
+
+export const Medium: Story = {
+  args: {
+    size: 'md',
+    placeholder: 'Medium Size',
+  },
+}
+
+export const Large: Story = {
+  args: {
+    size: 'lg',
+    placeholder: 'Large Size',
+  },
+}
