@@ -1,10 +1,11 @@
 import { cn } from '@/lib/utils'
 import { cva } from 'class-variance-authority'
 
-type Props = React.ComponentPropsWithRef<'input'> & {
+// TIP: We omit the input `size` prop since we are adding our custom size prop
+type Props = Omit<React.ComponentPropsWithRef<'input'>, 'size'> & {
   variant?: 'default' | 'primary' | 'error' | 'warning' | 'success'
   width?: 'fit' | 'full'
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' // Custom size prop
 }
 
 const variants = cva(

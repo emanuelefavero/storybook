@@ -24,6 +24,48 @@ export const NoProps: Story = {
 export const Default: Story = {
   args: {
     variant: 'default',
-    placeholder: 'Default',
+    placeholder: 'Default Variant',
+  },
+}
+
+export const Primary: Story = {
+  args: {
+    variant: 'primary',
+    placeholder: 'Primary Variant',
+  },
+}
+
+export const Error: Story = {
+  args: {
+    variant: 'error',
+    placeholder: 'Error Variant',
+  },
+}
+
+export const Warning: Story = {
+  args: {
+    variant: 'warning',
+    placeholder: 'Warning Variant',
+  },
+}
+
+export const Success: Story = {
+  args: {
+    variant: 'success',
+    placeholder: 'Success Variant',
+  },
+}
+
+export const Fit: Story = {
+  args: {
+    width: 'fit',
+    placeholder: 'Fit Width',
+  },
+}
+
+export const Full: Story = {
+  args: {
+    width: 'full',
+    placeholder: 'Full Width',
   },
 }
