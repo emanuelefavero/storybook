@@ -3,10 +3,11 @@ import { cva } from 'class-variance-authority'
 
 type Props = React.ComponentPropsWithRef<'input'> & {
   variant?: 'default' | 'primary' | 'error' | 'warning' | 'success'
+  width?: 'fit' | 'full'
 }
 
 const variants = cva(
-  'flex w-full rounded-lg border px-3 py-2 text-base ring-offset-(--background) placeholder:text-gray-500 focus-visible:ring-1 focus-visible:ring-(--foreground) focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
+  'flex rounded-lg border px-3 py-2 text-base ring-offset-(--background) placeholder:text-gray-500 focus-visible:ring-1 focus-visible:ring-(--foreground) focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
@@ -16,9 +17,14 @@ const variants = cva(
         warning: 'border-yellow-500 bg-yellow-500/5',
         success: 'border-green-500 bg-green-500/5',
       },
+      width: {
+        fit: 'w-fit',
+        full: 'w-full',
+      },
     },
     defaultVariants: {
       variant: 'default',
+      width: 'full',
     },
   },
 )
